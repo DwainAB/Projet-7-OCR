@@ -1,0 +1,41 @@
+.all{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 4.25rem;
+    align-items: center;
+    width: 100%;
+}
+
+.link{
+    color: #FF6060;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.link:focus{
+    text-decoration: underline;
+}
+
+.navbar-link{
+    display: flex;
+    justify-content: space-between;
+    width: 309px;
+    
+}
+
+.navbar-img{
+    width: auto;
+    height: 4rem;
+}
+
+@media screen and (max-width: 1350px) {
+    .navbar-img{
+        margin-left: 2rem;
+    }
+
+    .navbar-link{
+        margin-right: 2rem;
+    }
+}
