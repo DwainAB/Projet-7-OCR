@@ -6,11 +6,12 @@ import "../styles/Carte.css"
 function Logement(){
     return(
         <div className="section-carte">
-            {Data.map((id) => (
+            {Data.map((data) => (
                 <Carte
-                    key={`${id}`}
-                    image={id.cover}
-                    titre={id.title}
+                    key={data.id}
+                    id={data.id}
+                    image={data.cover}
+                    titre={data.title}
                 />
 
             ))}
