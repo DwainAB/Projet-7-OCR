@@ -4,7 +4,7 @@ import ModelCollapse from "./ModelCollapse"
 
 function Collapse(){
     return(
-        <div>
+        <div className="full-collapse">
             {DataApropos.map((id) => (
                 <ModelCollapse
                     key={`${id}`}

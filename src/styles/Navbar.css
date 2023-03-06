@@ -30,12 +30,28 @@
     height: 4rem;
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 650px) {
+    .link-home{
+        padding-right: 5rem;
+    }
+
+    .link{
+        font-size: 0.75rem;
+        margin: 0;
+    }
+
     .navbar-img{
-        margin-left: 2rem;
+        width: 145px;
+        height: 47px;
     }
 
     .navbar-link{
-        margin-right: 2rem;
+        width: 50%;
     }
+
+    .all{
+        margin: 0;
+       
+    }
+    
 }

@@ -1,5 +1,6 @@
 .carrousselbox{
  position: relative;
+ margin-top: 50px;
 }
 
 .imagecarroussel{
@@ -29,17 +30,15 @@
 }
 
 @media screen and (max-width : 650px){
-    .carrousselbox{
-        margin: 0 2rem;
-    }
 
     .fleche{
-        bottom: 1rem;
+        width: 1rem;
     }
+
 
     .imagecarroussel{
         border-radius: .625rem;
-        height: 15.9375rem;
+        height: 13.983rem;
     }
 
     .fleche{
