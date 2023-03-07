@@ -11,19 +11,16 @@ function CollapseLogement(i){
     const queryString_url_id = window.location.search //Récupération de l'id depuis l'url
     const idLogement = queryString_url_id.slice(1) //Supression de "?"
     const idLogementSelectionner = Data.find((element) => element.id === idLogement) //Recherche de l'objet qui à le même id que celui de l'url dans le fichier json Data
-    const hoteNom = idLogementSelectionner.host.name
-    const hoteImage = idLogementSelectionner.host.picture
-    console.log(idLogementSelectionner.tags)
+    const hoteNom = idLogementSelectionner.host.name //récupération du Nom de l'hôte dans une variable
+    const hoteImage = idLogementSelectionner.host.picture //récupération de l'image de l'hôte dans une variable
     const [isDescriptionToggleOpen, setIsDescriptionToggleOpen] = useState(false)
     const [isEquipementToggleOpen, setIsEquipementToggleOpen] = useState(false)
-    console.log(idLogementSelectionner.equipments)
-
 
     return(
         <div>
             <div className="boxLogement">
                 <div className="informationLogement">
-                    <h2 className="titreLogement">{idLogementSelectionner.title}</h2>
+                    <h2 className="titreLogement">{idLogementSelectionner.title}</h2> 
                     <p className="localisationLogement">{idLogementSelectionner.location}</p>
                     <ul className="listeTag">
                         {idLogementSelectionner.tags.map((data) => (
@@ -39,8 +36,7 @@ function CollapseLogement(i){
                     </div>
                     <div className="hoteStar">
                         {
-                            [...Array(5).keys()].map((e, k) => {
-                                console.log(e, k, parseInt(idLogementSelectionner.rating) )
+                            [...Array(5).keys()].map((k) => {
                                 if(parseInt(idLogementSelectionner.rating) > k  )
                                     return <img src={StarImgRed} alt="" />
                                 return <img src={StarImgGrey} alt="" />

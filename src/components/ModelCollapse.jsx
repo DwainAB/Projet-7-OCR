@@ -19,7 +19,7 @@ function ModelCollapse({title, content, i}){
                 <div className="item">                     
                     <div className="titre-item" onClick={() => toggle(i)}>
                         <h2>{title}</h2>
-                        <img src={Vector} alt="fleche" />
+                        <img className={ouvert === i ? 'active' : 'noactive'} src={Vector} alt="fleche" />
                     </div>                                  
                     <div className={ouvert === i ? 'contenue-item-show' : 'contenue-item'}><p>{content}</p></div>                    
                 </div>        

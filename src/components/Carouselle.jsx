@@ -21,7 +21,7 @@ function Carroussel(){
         }
     }
 
-    //Fonction qui permet d'aller à l'image précedente
+    //Fonction qui permet d'aller à l'image précédente
     function prevSlide(){
         setIndex(index - 1)
         if(index ===0){
