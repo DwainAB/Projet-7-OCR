@@ -63,6 +63,13 @@
     }
 }
 
+@media screen and (max-width: 1106px) {
+    .image-carte{
+        width: 100%;
+    }
+}
+
+
 @media screen and (max-width: 650px){
     .full-carte>h2{
         width: 80%;

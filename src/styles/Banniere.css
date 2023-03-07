@@ -31,6 +31,12 @@
     height: 14rem;
 }
 
+@media screen and (max-width:1106px){
+    .titre-banniere{
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width: 650px) {
     .full-banniere{
         margin: 0;
@@ -38,7 +44,7 @@
 
     .img-banniere,
     .shadow-banniere{
-        height: 13.938rem;
+        height: 111px;
         border-radius: .625rem;
     }
 
