@@ -7,7 +7,7 @@ function Collapse(){
         <div className="full-collapse">
             {DataApropos.map((id) => (
                 <ModelCollapse
-                    key={`${id}`}
+                    key={id.id}
                     content={id.content}
                     title={id.title}
                 />
@@ -16,5 +16,5 @@ function Collapse(){
         </div>
     )
 }
-
+            
 export default Collapse
