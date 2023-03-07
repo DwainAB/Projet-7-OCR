@@ -77,8 +77,12 @@
 
     .section-carte{
         background-color: #fff;
-        margin: 2rem;
+        margin: 30px 0;
         padding: 0;
+    }
+
+    .titre-banniere{
+        margin-left: 20px;
     }
 }
 
