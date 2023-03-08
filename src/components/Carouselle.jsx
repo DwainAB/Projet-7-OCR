@@ -3,7 +3,6 @@ import Data from "../Data.js"
 import FlecheGauche from "../assets/flechegauche.png"
 import FlecheDroit from "../assets/flechedroit.png"
 import "../styles/Carroussel.css"
-import Erreur404  from "../pages/Erreur.jsx"
 
 
 function Carroussel(){
