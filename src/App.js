@@ -13,10 +13,10 @@ function App() {
       <div className="global">
         <Navbar/>
         <Routes>
-          <Route  path="/" element={<Accueil/>} />
+          <Route path="/" element={<Accueil/>} />
           <Route path="/Apropos" element={<Apropos/>}/>
           <Route path="/Logement" element={<LogementInfo/>}/>
-          <Route path="*" elemement={<Erreur404/>}/>
+          <Route path="*" element={<Erreur404/>}/>
         </Routes>
         </div>
         <Footer/>

@@ -10,8 +10,8 @@ function Carroussel(){
     const idLogement = queryString_url_id.slice(1) //Supression de "?"
     const idLogementSelectionner = Data.find((element) => element.id === idLogement) //Recherche de l'objet qui à le même id que celui de l'url dans le fichier json Data
     const imageData = idLogementSelectionner.pictures //Récupération des images dans une variable
-
     const [index, setIndex] = useState(0)
+    
 
     //Fonction qui permet d'aller à l'image suivante
     function NextSlide(){
@@ -32,11 +32,13 @@ function Carroussel(){
     return(
         
         <div className="carrousselbox"> 
-          <img className="imagecarroussel" src={imageData[index]} alt="" />
-          <div className="carrousselnav">
-            <img onClick={prevSlide} className="fleche" src={FlecheGauche} alt="" />
-            <img onClick={NextSlide} className="fleche" src={FlecheDroit} alt="" />
-          </div>
+          <img className="imagecarroussel" src={imageData[index]} alt="" />     
+            {imageData.length > 1 && (
+                <div className="carrousselnav">
+                  <img onClick={prevSlide} className="fleche" src={FlecheGauche} alt="" />
+                  <img onClick={NextSlide} className="fleche" src={FlecheDroit} alt="" />
+                </div>
+            )}
         </div>
     )
 }

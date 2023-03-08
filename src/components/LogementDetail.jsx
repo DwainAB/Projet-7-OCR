@@ -6,7 +6,7 @@ import Vector from "../assets/vector.png"
 import StarImgGrey from "../assets/grey_star.png"
 import StarImgRed from "../assets/red-star.svg"
 
-function CollapseLogement(i){
+function PageLogement(){
 
     const queryString_url_id = window.location.search //Récupération de l'id depuis l'url
     const idLogement = queryString_url_id.slice(1) //Supression de "?"
@@ -15,6 +15,7 @@ function CollapseLogement(i){
     const hoteImage = idLogementSelectionner.host.picture //récupération de l'image de l'hôte dans une variable
     const [isDescriptionToggleOpen, setIsDescriptionToggleOpen] = useState(false)
     const [isEquipementToggleOpen, setIsEquipementToggleOpen] = useState(false)
+    
 
     return(
         <div>
@@ -75,6 +76,9 @@ function CollapseLogement(i){
             </div>
         </div>     
     )
-}
+}   
+   
 
-export default CollapseLogement
+    
+
+export default PageLogement
