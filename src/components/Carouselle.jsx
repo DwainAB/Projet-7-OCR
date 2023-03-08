@@ -3,16 +3,19 @@ import Data from "../Data.js"
 import FlecheGauche from "../assets/flechegauche.png"
 import FlecheDroit from "../assets/flechedroit.png"
 import "../styles/Carroussel.css"
+import Erreur404  from "../pages/Erreur.jsx"
 
 
 function Carroussel(){
+    const [index, setIndex] = useState(0)
     const queryString_url_id = window.location.search //Récupération de l'id depuis l'url
     const idLogement = queryString_url_id.slice(1) //Supression de "?"
     const idLogementSelectionner = Data.find((element) => element.id === idLogement) //Recherche de l'objet qui à le même id que celui de l'url dans le fichier json Data
-    const imageData = idLogementSelectionner.pictures //Récupération des images dans une variable
-    const [index, setIndex] = useState(0)
+    const idData = Data.map((data) => (data.id))
     
-
+    if (idData.indexOf(idLogement) !== -1)  {
+    const imageData = idLogementSelectionner.pictures //Récupération des images dans une variable
+        
     //Fonction qui permet d'aller à l'image suivante
     function NextSlide(){
         setIndex(index + 1)
@@ -41,6 +44,7 @@ function Carroussel(){
             )}
         </div>
     )
+  }
 }
 
 export default Carroussel
