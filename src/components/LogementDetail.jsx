@@ -24,7 +24,7 @@ function PageLogement(){
                     <h2 className="titreLogement">{idLogementSelectionner.title}</h2> 
                     <p className="localisationLogement">{idLogementSelectionner.location}</p>
                     <ul className="listeTag">
-                        {idLogementSelectionner.tags.map((data) => (
+                        {idLogementSelectionner.tags.map((data) => ( //pour chaque éléments du tableau tags, renvois moi un li avec l'élément
                             <li className="tag">{data}</li>
                         ))}
                     </ul>
@@ -37,10 +37,10 @@ function PageLogement(){
                     </div>
                     <div className="hoteStar">
                         {
-                            [...Array(5).keys()].map((k) => {
-                                if(parseInt(idLogementSelectionner.rating) > k  )
+                            [...Array(5).keys()].map((k) => { //création d'un tableau d'une longueur de 5, puis itère avec keys
+                                if(parseInt(idLogementSelectionner.rating) > k  ) //puis parcour le tableau en ajoutant le nombre détoile route indiqué dans Data
                                     return <img src={StarImgRed} alt="" />
-                                return <img src={StarImgGrey} alt="" />
+                                return <img src={StarImgGrey} alt="" /> //rempli les espaces vide du tableau avec les étoiles grises
                             })
                         }
                    </div>
@@ -53,7 +53,7 @@ function PageLogement(){
                         <div className="item-accordeon">                     
                                     <div className="titre-item-accor" onClick={() => setIsDescriptionToggleOpen(!isDescriptionToggleOpen)}>
                                         <h2>Description</h2>
-                                        <img className={isDescriptionToggleOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
+                                        <img className={isDescriptionToggleOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" /> {/*permet de changer la classe en fonction de l'état de la div*/}
                                     </div>                                  
                                 <div className={isDescriptionToggleOpen ? 'contenue-item-show-accor' : 'contenue-item-accor'}><p>{idLogementSelectionner.description}</p></div>                    
                             </div>    

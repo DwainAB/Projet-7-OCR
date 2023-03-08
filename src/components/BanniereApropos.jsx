@@ -12,3 +12,5 @@ function BanniereApropos(){
 }
 
 export default BanniereApropos
+
+//La div vide permet d'assombrir la bannière

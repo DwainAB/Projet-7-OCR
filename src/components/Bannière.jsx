@@ -6,10 +6,12 @@ function Banniere (){
     return(
         <div className="full-banniere">
             <img className="img-banniere" src={imgBanniere} alt="Banniere" />
-            <div className="shadow-banniere"></div>
+            <div className="shadow-banniere"></div> 
             <h2 className="titre-banniere">Chez vous, partout et ailleurs</h2>
         </div>
     )
 }
 
 export default Banniere
+
+//la div vide permet d'assombrir la bannière

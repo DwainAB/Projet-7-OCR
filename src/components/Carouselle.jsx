@@ -44,3 +44,5 @@ function Carroussel(){
 }
 
 export default Carroussel
+
+//ligne 36 permet de vérifier si la longueur du tableau est supérieur à 1 et si c'est le cas nous pouvons afficher les images
