@@ -1,13 +1,13 @@
 import React from 'react'
 import Banniere from '../components/BanniereAccueil'
-import Logement from '../components/Logement'
+import Carte from '../components/Carte'
 
 
 function Accueil(){
     return(
         <div>
             <Banniere/>
-            <Logement/>
+            <Carte/>
         </div>
     )
 }
