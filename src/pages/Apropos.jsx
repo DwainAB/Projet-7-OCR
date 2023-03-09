@@ -1,12 +1,12 @@
 import React from "react"
 import BanniereApropos from "../components/BanniereApropos"
-import Collapse from "../components/Collapse"
+import CollapseApropos from "../components/CollapseApropos"
 
 function Apropos(){
     return(
         <div>
             <BanniereApropos/>
-            <Collapse/>
+            <CollapseApropos/>
         </div>
     )
 }

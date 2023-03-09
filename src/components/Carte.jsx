@@ -8,7 +8,7 @@ function Carte({image, titre, id}){
     return(
         //La balise de lien englobe toutes la cartes, et lors du clique renvois l'id du logement dans l'url
         <div >
-            <Link to={`/Logement?${id}`} className="full-carte"> 
+            <Link to={`/Logement/${id}`} className="full-carte"> 
                 <img className="image-carte" src={image} alt="" />
                 <div className="shadow-carte"></div>
                 <h2 className="titre-carte">{titre}</h2>

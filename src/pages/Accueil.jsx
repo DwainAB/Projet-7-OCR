@@ -1,5 +1,5 @@
 import React from 'react'
-import Banniere from '../components/Bannière'
+import Banniere from '../components/BanniereAccueil'
 import Logement from '../components/Logement'
 
 

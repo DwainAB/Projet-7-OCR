@@ -1,51 +1,52 @@
 import React from "react";
 import Data from "../Data";
 import "../styles/LogementDetail.css"
-import { useState } from "react"
 import Vector from "../assets/vector.png"
 import StarImgGrey from "../assets/grey_star.png"
 import StarImgRed from "../assets/red-star.svg"
 import Erreur404 from "../pages/Erreur";
+import { useParams } from "react-router-dom";
+import Collapse from "./FonctionCollapse";
 
 
-function PageLogement(i, props){
-    const [isDescriptionToggleOpen, setIsDescriptionToggleOpen] = useState(false)
-    const [isEquipementToggleOpen, setIsEquipementToggleOpen] = useState(false)
-    const queryString_url_id = window.location.search //Récupération de l'id depuis l'url
-    const idLogement = queryString_url_id.slice(1) //Supression de "?"
-    const idLogementSelectionner = Data.find((element) => element.id === idLogement) //Recherche de l'objet qui à le même id que celui de l'url dans le fichier json Data
+function PageLogement(){
+    const {collapseProps} = Collapse() //ajout de la fonction collapse
+    const {id} = useParams() //récupération de l'id depuis l'url
+    const searchObject = Data.find((element) => element.id === id) //Recherche de l'objet qui à le même id que celui de l'url dans le fichier json Data
     
-    if (idLogementSelectionner == null)  {
+    if (searchObject == null)  { //si aucun objet est trouvé renvois à la page d'erreur
         return <Erreur404 />
     }
     
-    const hoteNom = idLogementSelectionner.host.name //récupération du Nom de l'hôte dans une variable
-    const hoteImage = idLogementSelectionner.host.picture //récupération de l'image de l'hôte dans une variable
+    const hostName = searchObject.host.name //récupération du Nom de l'hôte dans une variable
+    const hostPicture = searchObject.host.picture //récupération de l'image de l'hôte dans une variable
 
         return(
             <div>
+                
                 <div className="boxLogement">
                     <div className="informationLogement">
-                        <h2 className="titreLogement">{idLogementSelectionner.title}</h2> 
-                        <p className="localisationLogement">{idLogementSelectionner.location}</p>
+                        <h2 className="titreLogement">{searchObject.title}</h2> 
+                        <p className="localisationLogement">{searchObject.location}</p>
                         <ul className="listeTag">
-                            {idLogementSelectionner.tags.map((data) => (
-                                <li className="tag">{data}</li>
+                            {searchObject.tags.map((data) => (
+                                <li key={data} className="tag">{data}</li>
                             ))}
                         </ul>
                     </div>
     
                     <div className="hote">
                         <div className="hoteIdentite">
-                        <p className="hoteNom">{hoteNom}</p>
-                        <img className="hoteImage" src={hoteImage} alt="" />
+                        <p className="hoteNom">{hostName}</p>
+                        <img className="hoteImage" src={hostPicture} alt="" />
                         </div>
                         <div className="hoteStar">
                             {
                                 [...Array(5).keys()].map((k) => {
-                                    if(parseInt(idLogementSelectionner.rating) > k  )
-                                        return <img src={StarImgRed} alt="" />
-                                    return <img src={StarImgGrey} alt="" />
+                                    
+                                    if(parseInt(searchObject.rating) > k  )
+                                        return <img key={k} src={StarImgRed} alt="" />
+                                    return <img key={k} src={StarImgGrey} alt="" />
                                 })
                             }
                        </div>
@@ -56,23 +57,23 @@ function PageLogement(i, props){
                     <div className="wrapper-accordeon">
                         <div className="accordeon">
                             <div className="item-accordeon">                     
-                                        <div className="titre-item-accor" onClick={() => setIsDescriptionToggleOpen(!isDescriptionToggleOpen)}>
+                                        <div className="titre-item-accor" onClick={collapseProps('section1').toggle}>
                                             <h2>Description</h2>
-                                            <img className={isDescriptionToggleOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
+                                            <img className={collapseProps('section1').isOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
                                         </div>                                  
-                                    <div className={isDescriptionToggleOpen ? 'contenue-item-show-accor' : 'contenue-item-accor'}><p>{idLogementSelectionner.description}</p></div>                    
+                                    <div className={collapseProps('section1').isOpen ? 'contenue-item-show-accor' : 'contenue-item-accor'}><p>{searchObject.description}</p></div>                    
                                 </div>    
                         </div>
     
                         <div className="accordeon">
                             <div className="item-accordeon">                     
-                                        <div className="titre-item-accor" onClick={() => setIsEquipementToggleOpen(!isEquipementToggleOpen)}>
+                                        <div className="titre-item-accor" onClick={collapseProps('section2').toggle}>
                                             <h2>Equipement</h2>
-                                            <img className={isEquipementToggleOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
+                                            <img className={collapseProps('section2').isOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
                                         </div>                                  
-                                    <div className={isEquipementToggleOpen ? 'contenue-item-show-accor' : 'contenue-item-accor'}>
-                                    {idLogementSelectionner.equipments.map((id) => (
-                                      <p>{id}</p>
+                                    <div className={collapseProps('section2').isOpen ? 'contenue-item-show-accor' : 'contenue-item-accor'}>
+                                    {searchObject.equipments.map((id) => (
+                                      <p key={id}>{id}</p>
                                     ))}
                                     </div>                    
                                 </div>    
