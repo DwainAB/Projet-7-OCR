@@ -12,11 +12,11 @@ function CollapseApropos(){
                 <div className="wrapper" key={index}>
                     <div className="accordeon">
                         <div className="item">                     
-                            <div className="titre-item" onClick={collapseProps('section'+index).toggle}> {/*Lors du clique le l'élément déclanche la fonction collapseProps qui active l'effet de toggle*/}
+                            <div className="titre-item" onClick={collapseProps(index).toggle}> {/*Lors du clique le l'élément déclanche la fonction collapseProps qui active l'effet de toggle*/}
                                 <h2>{item.title}</h2>
-                                <img className={collapseProps('section'+index).isOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
+                                <img className={collapseProps(index).isOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
                             </div>                                  
-                            <div className={collapseProps('section'+index).isOpen ? 'contenue-item-show' : 'contenue-item'}><p>{item.content}</p></div>                    
+                            <div className={collapseProps(index).isOpen ? 'contenue-item-show' : 'contenue-item'}><p>{item.content}</p></div>                    
                         </div>        
                     </div>
                 </div>

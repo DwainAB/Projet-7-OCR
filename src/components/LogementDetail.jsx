@@ -57,21 +57,21 @@ function PageLogement(){
                     <div className="wrapper-accordeon">
                         <div className="accordeon">
                             <div className="item-accordeon">                     
-                                        <div className="titre-item-accor" onClick={collapseProps('section1').toggle}>
+                                        <div className="titre-item-accor" onClick={collapseProps(searchObject.description).toggle}>
                                             <h2>Description</h2>
-                                            <img className={collapseProps('section1').isOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
+                                            <img className={collapseProps(searchObject.description).isOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
                                         </div>                                  
-                                    <div className={collapseProps('section1').isOpen ? 'contenue-item-show-accor' : 'contenue-item-accor'}><p>{searchObject.description}</p></div>                    
+                                    <div className={collapseProps(searchObject.description).isOpen ? 'contenue-item-show-accor' : 'contenue-item-accor'}><p>{searchObject.description}</p></div>                    
                                 </div>    
                         </div>
     
                         <div className="accordeon">
                             <div className="item-accordeon">                     
-                                        <div className="titre-item-accor" onClick={collapseProps('section2').toggle}>
+                                        <div className="titre-item-accor" onClick={collapseProps(searchObject.equipments).toggle}>
                                             <h2>Equipement</h2>
-                                            <img className={collapseProps('section2').isOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
+                                            <img className={collapseProps(searchObject.equipments).isOpen ? 'active' : 'noactive'} src={Vector} alt="fleche" />
                                         </div>                                  
-                                    <div className={collapseProps('section2').isOpen ? 'contenue-item-show-accor' : 'contenue-item-accor'}>
+                                    <div className={collapseProps(searchObject.equipments).isOpen ? 'contenue-item-show-accor' : 'contenue-item-accor'}>
                                     {searchObject.equipments.map((id) => (
                                       <p key={id}>{id}</p>
                                     ))}
